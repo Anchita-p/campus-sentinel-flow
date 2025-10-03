@@ -65,13 +65,33 @@ const SecurityDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background p-6 relative overflow-hidden">
-      {/* Floating background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-        <div className="absolute top-10 right-10 w-64 h-64 border border-primary/20 rotate-45 animate-[spin_30s_linear_infinite]" />
-        <div className="absolute bottom-20 left-20 w-48 h-48 border-2 border-accent/20 rounded-full animate-pulse" />
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-highlight/20 rotate-12 animate-[spin_25s_linear_infinite_reverse]" />
-        <div className="absolute top-1/3 right-1/3 w-2 h-40 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-2 bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+      {/* Enhanced Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        {/* Rotating wireframe cubes */}
+        <div className="absolute top-10 right-10 w-64 h-64 border border-primary/30 rotate-45 animate-[spin_30s_linear_infinite]" />
+        <div className="absolute top-20 right-20 w-56 h-56 border border-accent/20 rotate-45 animate-[spin_35s_linear_infinite_reverse]" />
+        
+        {/* Pulsing circles */}
+        <div className="absolute bottom-20 left-20 w-48 h-48 border-2 border-accent/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-32 left-32 w-32 h-32 border border-highlight/20 rounded-full animate-[pulse_3s_ease-in-out_infinite]" />
+        
+        {/* Grid pattern */}
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-highlight/20 rotate-12 animate-[spin_25s_linear_infinite_reverse]">
+          <div className="absolute inset-4 border border-highlight/15" />
+        </div>
+        
+        {/* Scanning lines */}
+        <div className="absolute top-1/3 right-1/3 w-2 h-40 bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-[scan_4s_ease-in-out_infinite]" />
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-2 bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-[scan_5s_ease-in-out_infinite]" />
+        
+        {/* Hexagon */}
+        <div className="absolute top-1/4 left-1/3 w-24 h-24 border border-primary/20 rotate-45 animate-[spin_40s_linear_infinite]">
+          <div className="absolute inset-2 border border-primary/15 rotate-45" />
+        </div>
+        
+        {/* Floating orbs */}
+        <div className="absolute top-3/4 right-1/3 w-16 h-16 rounded-full bg-gradient-to-br from-accent/10 to-highlight/10 blur-xl animate-[float_6s_ease-in-out_infinite]" />
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-xl animate-[float_8s_ease-in-out_infinite]" />
       </div>
       <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Header */}
@@ -92,7 +112,7 @@ const SecurityDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Camera className="h-5 w-5 text-primary" />
-                Live Gate Camera
+                Live Gate Camera - Multi-Modal Recognition
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -103,12 +123,46 @@ const SecurityDashboard = () => {
                     <p className="text-sm text-muted-foreground">Camera Feed Simulation</p>
                   </div>
                 </div>
+                
+                {/* License Plate Detection Box - Bottom Right */}
+                <div className="absolute bottom-20 right-16 w-40 h-16 border-2 border-accent animate-pulse">
+                  <div className="absolute -top-6 left-0 bg-accent/90 px-2 py-1 text-xs font-mono">
+                    PLATE: MH-12-AB-5678
+                  </div>
+                  <div className="absolute top-0 left-0 w-2 h-2 bg-accent" />
+                  <div className="absolute top-0 right-0 w-2 h-2 bg-accent" />
+                  <div className="absolute bottom-0 left-0 w-2 h-2 bg-accent" />
+                  <div className="absolute bottom-0 right-0 w-2 h-2 bg-accent" />
+                </div>
+
+                {/* Face Recognition Box - Center Left */}
+                <div className="absolute top-24 left-20 w-32 h-40 border-2 border-highlight animate-pulse">
+                  <div className="absolute -top-6 left-0 bg-highlight/90 px-2 py-1 text-xs font-semibold">
+                    FACE MATCH: 98.4%
+                  </div>
+                  <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-highlight" />
+                  <div className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-highlight" />
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-highlight" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-highlight" />
+                  
+                  {/* Scanning lines animation */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-highlight to-transparent animate-[scan_2s_ease-in-out_infinite]" />
+                  </div>
+                </div>
+
                 {/* AI Detection Overlay */}
-                <div className="absolute top-4 left-4 right-4">
-                  <div className="bg-background/90 backdrop-blur p-3 rounded border border-accent shadow-glow-accent">
+                <div className="absolute top-4 left-4 right-4 flex gap-4">
+                  <div className="bg-background/90 backdrop-blur p-3 rounded border border-accent shadow-glow-accent flex-1">
                     <div className="flex items-center gap-2 text-sm">
                       <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-                      <span className="text-accent font-semibold">AI DETECTION ACTIVE</span>
+                      <span className="text-accent font-semibold">LICENSE PLATE SCAN</span>
+                    </div>
+                  </div>
+                  <div className="bg-background/90 backdrop-blur p-3 rounded border border-highlight shadow-glow-accent flex-1">
+                    <div className="flex items-center gap-2 text-sm">
+                      <div className="h-2 w-2 rounded-full bg-highlight animate-pulse" />
+                      <span className="text-highlight font-semibold">FACE RECOGNITION</span>
                     </div>
                   </div>
                 </div>
