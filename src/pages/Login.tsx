@@ -41,9 +41,21 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rotate-45 animate-[spin_20s_linear_infinite]" />
+        <div className="absolute top-40 right-20 w-24 h-24 border border-highlight/20 rounded-full animate-pulse" />
+        <div className="absolute bottom-32 left-1/4 w-20 h-20 border-2 border-accent/20 animate-[spin_15s_linear_infinite_reverse]" />
+        <div className="absolute top-1/3 right-1/3 w-40 h-40 border border-primary/10 rounded-lg rotate-12 animate-[spin_25s_linear_infinite]" />
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-highlight/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        
+        {/* Circuit-like lines */}
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+        <div className="absolute top-1/4 left-0 w-48 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+        <div className="absolute bottom-1/3 right-0 w-64 h-px bg-gradient-to-l from-transparent via-primary/30 to-transparent" />
       </div>
 
       <Card className="w-full max-w-md mx-4 bg-card/80 backdrop-blur-xl border-card-border shadow-elevated relative z-10">

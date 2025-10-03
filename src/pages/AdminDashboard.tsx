@@ -60,8 +60,17 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-background p-6 relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+        <div className="absolute top-20 left-1/4 w-56 h-56 border border-primary/20 rounded-lg rotate-45 animate-[spin_35s_linear_infinite]" />
+        <div className="absolute bottom-32 right-1/3 w-40 h-40 border-2 border-accent/20 animate-[spin_20s_linear_infinite_reverse]" />
+        <div className="absolute top-1/2 right-20 w-28 h-28 border border-highlight/20 rounded-full animate-pulse" />
+        <div className="absolute top-1/4 left-10 w-px h-48 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+        <div className="absolute bottom-1/3 left-1/2 w-64 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        <div className="absolute top-3/4 right-10 w-36 h-px bg-gradient-to-l from-transparent via-highlight/20 to-transparent" />
+      </div>
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>

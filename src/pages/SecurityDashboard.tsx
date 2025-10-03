@@ -64,8 +64,16 @@ const SecurityDashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-background p-6 relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+        <div className="absolute top-10 right-10 w-64 h-64 border border-primary/20 rotate-45 animate-[spin_30s_linear_infinite]" />
+        <div className="absolute bottom-20 left-20 w-48 h-48 border-2 border-accent/20 rounded-full animate-pulse" />
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-highlight/20 rotate-12 animate-[spin_25s_linear_infinite_reverse]" />
+        <div className="absolute top-1/3 right-1/3 w-2 h-40 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-2 bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+      </div>
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
